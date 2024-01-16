@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.*;
 public class PetTest {
 
     @Test
-    public void deveRetornar404AoBuscarPetPorIdInexistente (){
+    public void shouldReturn404WhenFetchingNonexistentPetById (){
 
         baseURI = "https://petstore.swagger.io/v2";
 

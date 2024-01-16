@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class PetUpdateTest {
 
     @Test
-    public void atualizarPetComCorpoDaRequisicao() {
+    public void updatePetWithRequestBody() {
         baseURI = "https://petstore.swagger.io/v2";
 
         String requestBody = "{\n" +

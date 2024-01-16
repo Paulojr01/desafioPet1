@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class OrderTest {
 
     @Test
-    public void deveCriarNovoPedidoDePetComSucesso() {
+    public void shouldCreateNewPetOrderSuccessfully() {
         baseURI = "https://petstore.swagger.io/v2";
 
         LocalDateTime dataHoraAtual = LocalDateTime.now();
