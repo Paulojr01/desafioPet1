@@ -1,5 +1,6 @@
 package desafioPet1.desafioPet1.order;
 
+import desafioPet1.desafioPet1.Utils.BaseApi;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -13,18 +14,18 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.equalTo;
 
-public class OrderTest {
+public class PedidoTest extends BaseApi {
 
     @Test
-    public void shouldCreateNewPetOrderSuccessfully() {
-        baseURI = "https://petstore.swagger.io/v2";
+    public void deveCriarNovoPedidoDeAnimalComSucesso() {
+
 
         LocalDateTime dataHoraAtual = LocalDateTime.now();
         DateTimeFormatter formataDataHora = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         String dataHoraFormatada = dataHoraAtual.format(formataDataHora);
 
-        String requestBody = "{\n" +
-                "  \"id\": 1,\n" +
+                String requestBody = "{\n" +
+                "  \"id\": 2.2,\n" +
                 "  \"petId\": 1,\n" +
                 "  \"quantity\": 1,\n" +
                 "  \"shipDate\": \"" + dataHoraFormatada + "\",\n" +
@@ -36,7 +37,7 @@ public class OrderTest {
                     .body(requestBody)
                     .contentType(ContentType.JSON)
                 .when()
-                    .post("/store/order")
+                .post("/store/order")
                 .then()
                     .log().all()
                     .body("id", notNullValue())
@@ -57,6 +58,8 @@ public class OrderTest {
 
         int quantityDePet = jsonPath.getInt("quantity");
         assertThat(quantityDePet, both(greaterThan(0)).and(lessThan(50)));
+
+
     }
 }
 

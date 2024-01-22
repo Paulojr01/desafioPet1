@@ -1,15 +1,15 @@
 package desafioPet1.desafioPet1.pet;
 
+import desafioPet1.desafioPet1.Utils.BaseApi;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
-import static io.restassured.RestAssured.baseURI;
+
 import static io.restassured.RestAssured.given;
 
-public class PetFindByStatusTest {
+public class BuscarPetPorStatusTest extends BaseApi {
 
     @Test
-    public void searchPetsWithPendingStatus() {
-        baseURI = "https://petstore.swagger.io/v2";
+    public void buscarAnimaisComStatusPendente() {
 
                 given()
                     .contentType(ContentType.JSON)

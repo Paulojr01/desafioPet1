@@ -1,5 +1,6 @@
 package desafioPet1.desafioPet1.pet;
 
+import desafioPet1.desafioPet1.Utils.BaseApi;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -10,11 +11,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.equalTo;
 
-public class PetUpdateTest {
+public class AtualizarPetPorIdTest extends BaseApi {
+
 
     @Test
-    public void updatePetWithRequestBody() {
-        baseURI = "https://petstore.swagger.io/v2";
+    public void atualizarPetComCorpoRequisicao() {
+
 
         String requestBody = "{\n" +
                 "  \"id\": 10,\n" +
