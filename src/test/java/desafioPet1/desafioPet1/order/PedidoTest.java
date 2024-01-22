@@ -25,7 +25,7 @@ public class PedidoTest extends BaseApi {
         String dataHoraFormatada = dataHoraAtual.format(formataDataHora);
 
                 String requestBody = "{\n" +
-                "  \"id\": 2.2,\n" +
+                "  \"id\": 1,\n" +
                 "  \"petId\": 1,\n" +
                 "  \"quantity\": 1,\n" +
                 "  \"shipDate\": \"" + dataHoraFormatada + "\",\n" +
