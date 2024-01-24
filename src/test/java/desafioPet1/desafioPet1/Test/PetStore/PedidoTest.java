@@ -1,4 +1,4 @@
-package desafioPet1.desafioPet1.order;
+package desafioPet1.desafioPet1.Test.PetStore;
 
 import desafioPet1.desafioPet1.Dados.Dados;
 import desafioPet1.desafioPet1.Utils.BaseApi;
@@ -20,21 +20,21 @@ public class PedidoTest extends BaseApi {
 
         Map requestBody = dados.dadosPedidoTest200();
 
-        given()
-                .body(requestBody)
-                .contentType(ContentType.JSON)
+                given()
+                    .body(requestBody)
+                    .contentType(ContentType.JSON)
                 .when()
-                .post("/store/order")
+                    .post("/store/order")
                 .then()
-                .statusCode(200)
-                .log().all()
-                .body("id", notNullValue())
-                .body("petId", notNullValue())
-                .body("quantity", notNullValue())
-                .body("status", equalTo("placed"))
-                .body("complete", equalTo(true));
+                    .statusCode(200)
+                    .log().all()
+                    .body("id", notNullValue(),
+                "petId", notNullValue(),
+                        "quantity", notNullValue(),
+                        "shipDate", notNullValue(),
+                        "status", equalTo("placed"),
+                        "complete", equalTo(true));
     }
-
 }
 
 

@@ -1,4 +1,4 @@
-package desafioPet1.desafioPet1.pet;
+package desafioPet1.desafioPet1.Test.PetStore;
 
 import desafioPet1.desafioPet1.Utils.BaseApi;
 import io.restassured.http.ContentType;
